@@ -1,13 +1,12 @@
-using UnityEngine;
 using DG.Tweening;
 using System.Collections;
+using UnityEngine;
 
-public class PencilScript : MonoBehaviour
+public class ProtracScript : MonoBehaviour
 {
-
     public TypeOfTower towerType;
     public float timeToTick;
-    
+
     public float time;
     public bool hasDropped;
     public float offset;
@@ -15,7 +14,7 @@ public class PencilScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,32 +22,29 @@ public class PencilScript : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if (time >= timeToTick && hasDropped) 
+        if (time >= timeToTick )
         {
             time = 0;
-            StartCoroutine(PencilAttack());
+            StartCoroutine(ProtracAttack());
         }
 
-    
 
 
     }
 
-    IEnumerator PencilAttack()
+    IEnumerator ProtracAttack()
     {
         Vector2 position = transform.position;
-        transform.DOLocalMove(transform.position + transform.up* offset, localTime);
-        yield return new WaitForSeconds(localTime*2);
-        transform.DOLocalMove(transform.position - transform.up* offset, localTime);
+        transform.transform.DORotate(new Vector3(0, 0, -180), localTime, RotateMode.LocalAxisAdd);
+        yield return new WaitForSeconds(localTime * 2);
+        transform.transform.DORotate(new Vector3(0, 0, 180), localTime, RotateMode.LocalAxisAdd);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy")
+        if (collision.tag == "Enemy")
         {
             Debug.Log("ASD");
             collision.GetComponent<EnemyGeneral>().GetHit();
         }
     }
-
 }
