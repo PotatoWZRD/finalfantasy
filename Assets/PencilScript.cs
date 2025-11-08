@@ -1,11 +1,6 @@
 using UnityEngine;
 
-public enum TypeOfTower
-{
-    Pencil,
-    Calculator,
-    Protractor
-}
+
 
 public class PencilScript : MonoBehaviour
 {
@@ -13,7 +8,7 @@ public class PencilScript : MonoBehaviour
     public GameObject pencil;
     public TypeOfTower towerType;
 
-
+    
     public float test;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
