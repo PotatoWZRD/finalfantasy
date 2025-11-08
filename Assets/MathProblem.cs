@@ -13,6 +13,7 @@ public class MathProblem : MonoBehaviour
     public int curAns = 0;
 
     [SerializeField] GameObject coins;
+    [SerializeField] GameObject bar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -72,5 +73,6 @@ public class MathProblem : MonoBehaviour
         yield return new WaitForSeconds(2);
         question.color = Color.black;
         question.transform.parent.gameObject.SetActive(false);
+        bar.SetActive(true);
     }
 }

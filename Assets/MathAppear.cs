@@ -1,10 +1,13 @@
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class MathAppear : MonoBehaviour
 {
     public float startTimer = 10;
     public float currentTime = 0;
     public GameObject yippee;
+    public GameObject barFill;
 
     [SerializeField] GameObject connectedMath;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,8 +27,10 @@ public class MathAppear : MonoBehaviour
         if (currentTime > startTimer)
         {
             yippee.SetActive(true);
+            barFill.transform.parent.gameObject.SetActive(false);
         }
 
+        barFill.transform.localScale = new Vector2(barFill.transform.localScale.x, currentTime/startTimer);
     }
 
     private void OnMouseDown()
