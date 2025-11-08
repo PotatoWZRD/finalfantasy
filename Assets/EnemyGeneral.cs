@@ -16,9 +16,19 @@ public class EnemyGeneral : MonoBehaviour
     public void GetHit()
     {
         currHealth--;
+
+        if(currHealth <=0 )
+        {
+            Death();
+        }
+
         healthSlider.value = currHealth/maxHealth;
     }
 
+    public void Death()
+    {
+        gameObject.SetActive(false);
+    }
 
     
 }

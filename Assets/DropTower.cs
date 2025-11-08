@@ -17,11 +17,15 @@ public class DropTower : MonoBehaviour
 
     public Color alpha;
     public float test;
+
+    public int PencilCost;
+
     Vector3 mousePos;
     public BoxCollider2D boxCollider;
     private GameObject mouseCursor;
     private bool canPlace;
     public LayerMask layerToHit;
+    public CoinManager coinManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +33,7 @@ public class DropTower : MonoBehaviour
 
         mouseCursor = Instantiate(gpencil);
         mouseCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
+        coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
         //mouseCursor.GetComponentInChildren<SpriteRenderer>().color = alpha;
     }
 
@@ -65,9 +70,9 @@ public class DropTower : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(0) && canPlace)
+        if (Input.GetMouseButtonDown(0) && canPlace && coinManager.coins >= PencilCost)
         {
-            
+            coinManager.coins -= PencilCost;
             GameObject newPencil = Instantiate(pencil, mouseWorldPosition, mouseCursor.transform.rotation);
             newPencil.GetComponent<PencilScript>().hasDropped = true;
             newPencil.layer = LayerMask.NameToLayer("Tower");
