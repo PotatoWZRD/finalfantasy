@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -12,7 +13,11 @@ public class DropTower : MonoBehaviour
 {
 
     public GameObject pencil;
-    public GameObject gpencil;
+    public GameObject protractor;
+    public GameObject calculator;
+    public GameObject gPencil;
+    public GameObject gProt;
+    public GameObject gCalc;
     public TypeOfTower towerType;
 
     public Color alpha;
@@ -31,7 +36,7 @@ public class DropTower : MonoBehaviour
     {
         towerType = TypeOfTower.Pencil;
 
-        mouseCursor = Instantiate(gpencil);
+        mouseCursor = Instantiate(gPencil);
         mouseCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
         coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
         //mouseCursor.GetComponentInChildren<SpriteRenderer>().color = alpha;
@@ -39,12 +44,14 @@ public class DropTower : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        ChangeTypeOfTower();
+
         mousePos = Input.mousePosition;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePos);
         mouseWorldPosition.z = 0f;
@@ -73,11 +80,13 @@ public class DropTower : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canPlace && coinManager.coins >= PencilCost)
         {
             coinManager.coins -= PencilCost;
-            GameObject newPencil = Instantiate(pencil, mouseWorldPosition, mouseCursor.transform.rotation);
-            newPencil.GetComponent<PencilScript>().hasDropped = true;
-            newPencil.layer = LayerMask.NameToLayer("Tower");
+
+            PlaceTower(mouseWorldPosition);
+
+
+
         }
-        if (Input.GetMouseButtonDown(1)) 
+        if (Input.GetMouseButtonDown(1))
         {
             mouseCursor.transform.Rotate(0, 0, 90);
         }
@@ -100,5 +109,51 @@ public class DropTower : MonoBehaviour
         }
     }
 
+    public void ChangeTypeOfTower()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            towerType = TypeOfTower.Pencil;
+            Destroy(mouseCursor);
+            mouseCursor = Instantiate(gPencil);
+            mouseCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
 
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            towerType = TypeOfTower.Protractor;
+            Destroy(mouseCursor);
+            mouseCursor = Instantiate(gProt);
+            mouseCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            towerType = TypeOfTower.Calculator;
+            Destroy(mouseCursor);
+            mouseCursor = Instantiate(gCalc);
+            mouseCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
+
+        }
+
+
+    }
+
+    public void PlaceTower(Vector3 mouseWorldPos)
+    {
+        switch (towerType)
+        {
+            case TypeOfTower.Pencil:
+                GameObject newPencil = Instantiate(pencil, mouseWorldPos, mouseCursor.transform.rotation);
+                newPencil.GetComponent<PencilScript>().hasDropped = true;
+                newPencil.layer = LayerMask.NameToLayer("Tower");
+                break;
+            case TypeOfTower.Protractor:
+                GameObject newProtractor = Instantiate(protractor, mouseWorldPos, mouseCursor.transform.rotation);
+                newProtractor.GetComponent<ProtracScript>().hasDropped = true;
+                newProtractor.layer = LayerMask.NameToLayer("Tower");
+                break;
+        }
+
+    }
 }
