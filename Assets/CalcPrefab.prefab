@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6076005140586448907}
   - component: {fileID: 7966589621829111213}
   - component: {fileID: 5921722580798134280}
+  - component: {fileID: 3039762230759907801}
   m_Layer: 7
   m_Name: CalcPrefab
   m_TagString: Tower
@@ -127,6 +128,42 @@ MonoBehaviour:
   offset: 0
   localTime: 0.5
   projectile: {fileID: 7074830020615284971, guid: 26eae27256cc38545a505ed4ce47d635, type: 3}
+--- !u!58 &3039762230759907801
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390071208230488502}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.15856886}
+  m_Radius: 7
 --- !u!1 &7186056126424364033
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
+    private GameObject waypointManager;
     public List<Transform> waypoints;
     public int waypointIndex;
     public float moveSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        waypointManager = GameObject.Find("Empties");
+        waypoints = waypointManager.GetComponent<WaypointManager>().WaypointList;
         transform.position = waypoints[waypointIndex].position;
     }
 
