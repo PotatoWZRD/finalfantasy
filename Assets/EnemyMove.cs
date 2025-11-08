@@ -21,12 +21,15 @@ public class EnemyMove : MonoBehaviour
 
     public void MoveEnemy()
     {
-
-        transform.position = Vector2.MoveTowards(transform.position,  waypoints[waypointIndex].position, moveSpeed* Time.deltaTime);
-
-        if(transform.position == waypoints[waypointIndex].position )
+        if (waypointIndex < waypoints.Count-1) 
         {
-            waypointIndex++;
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].position, moveSpeed * Time.deltaTime);
+
+            if (transform.position == waypoints[waypointIndex].position)
+            {
+                waypointIndex++;
+            }
+
         }
     }
 }

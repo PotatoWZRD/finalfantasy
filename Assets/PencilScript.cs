@@ -10,6 +10,8 @@ public class PencilScript : MonoBehaviour
     
     public float time;
     public bool hasDropped;
+    public float offset;
+    public float localTime;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,7 +26,7 @@ public class PencilScript : MonoBehaviour
         if (time >= timeToTick && hasDropped) 
         {
             time = 0;
-            //StartCoroutine(PencilAttack());
+            StartCoroutine(PencilAttack());
         }
 
         if(Input.GetKeyDown(KeyCode.Tab))
@@ -37,13 +39,21 @@ public class PencilScript : MonoBehaviour
 
     }
 
-    /*IEnumerator PencilAttack()
+    IEnumerator PencilAttack()
     {
         Vector2 position = transform.position;
-        transform.DOMove(transform.up * 2, 1f);
-        yield return new WaitForSeconds(2f);
-        transform.DOMove(-transform.up * 2, 1f);
-    }*/
+        transform.DOLocalMove(transform.position + transform.up* offset, localTime);
+        yield return new WaitForSeconds(localTime*2);
+        transform.DOLocalMove(transform.position - transform.up* offset, localTime);
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Enemy")
+        {
+            Debug.Log("ASD");
+            collision.GetComponent<EnemyGeneral>().GetHit();
+        }
+    }
 
 }
