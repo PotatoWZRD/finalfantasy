@@ -30,5 +30,6 @@ public class EnemyGeneral : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+
     
 }
