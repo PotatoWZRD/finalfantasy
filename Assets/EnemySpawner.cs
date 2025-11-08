@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+
+    public float timeTillNextSpawn;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +17,9 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
+    public void SpawnEnemy()
+    {
 
+    }
 
 }
