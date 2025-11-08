@@ -172,6 +172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: textbox1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7657292655134026269, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -386,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54beeae014415094591b7d1f12b8c911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MathAppear
-  startTimer: 10
+  startTimer: 3
   currentTime: 0
   yippee: {fileID: 828981420}
   barFill: {fileID: 1578706265}
@@ -890,7 +894,7 @@ MonoBehaviour:
   - {fileID: 1664114734}
   - {fileID: 127249746}
   - {fileID: 1111409473}
-  difficultyVal: 1
+  difficultyVal: 3
 --- !u!1 &443389922
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,6 +977,10 @@ PrefabInstance:
     - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Name
       value: textbox1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7657292655134026269, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Pivot.x
@@ -1230,6 +1238,10 @@ PrefabInstance:
     - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Name
       value: textbox1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7657292655134026269, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Pivot.x
@@ -1502,6 +1514,10 @@ PrefabInstance:
     - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Name
       value: textbox1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7657292655134026269, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Pivot.x
@@ -1891,7 +1907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54beeae014415094591b7d1f12b8c911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MathAppear
-  startTimer: 10
+  startTimer: 3
   currentTime: 0
   yippee: {fileID: 1099313784}
   barFill: {fileID: 664454873}
@@ -1901,67 +1917,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5954184557108417042, guid: c7d147c454ae6e249a5055215cf9f675, type: 3}
   m_PrefabInstance: {fileID: 1789122495}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &779496248
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4412921871601558087, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.574998
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10.701646
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5390071208230488502, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: m_Name
-      value: CalcPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 5921722580798134280, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
-      propertyPath: timeToTick
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ddf089d6a34fd4c4b9e2c9e5eeabf962, type: 3}
 --- !u!1 &804153201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,6 +2024,10 @@ PrefabInstance:
     - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Name
       value: textbox1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7657292655134026269, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Pivot.x
@@ -2531,7 +2490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54beeae014415094591b7d1f12b8c911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MathAppear
-  startTimer: 10
+  startTimer: 3
   currentTime: 0
   yippee: {fileID: 1181517865}
   barFill: {fileID: 202341080}
@@ -2558,7 +2517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54beeae014415094591b7d1f12b8c911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MathAppear
-  startTimer: 10
+  startTimer: 3
   currentTime: 0
   yippee: {fileID: 30723931}
   barFill: {fileID: 588009115}
@@ -2580,7 +2539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54beeae014415094591b7d1f12b8c911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MathAppear
-  startTimer: 10
+  startTimer: 3
   currentTime: 0
   yippee: {fileID: 659934941}
   barFill: {fileID: 1063799406}
@@ -2879,7 +2838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54beeae014415094591b7d1f12b8c911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MathAppear
-  startTimer: 10
+  startTimer: 3
   currentTime: 0
   yippee: {fileID: 1990445572}
   barFill: {fileID: 242554606}
@@ -2986,7 +2945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54beeae014415094591b7d1f12b8c911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MathAppear
-  startTimer: 10
+  startTimer: 3
   currentTime: 0
   yippee: {fileID: 1683375664}
   barFill: {fileID: 99400984}
@@ -3179,6 +3138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: textbox1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7657292655134026269, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3309,75 +3272,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WayPointers
   nextWaypoint: {fileID: 993430837}
---- !u!1001 &1821617964
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3675474909228241463, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3675474909228241463, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: localTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3675474909228241463, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: timeToTick
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -19.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70709634
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.70711726
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4412921871601558087, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90.002
-      objectReference: {fileID: 0}
-    - target: {fileID: 5390071208230488502, guid: 031ff1c5017c960468487d623632c483, type: 3}
-      propertyPath: m_Name
-      value: ProtractPrefab
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 031ff1c5017c960468487d623632c483, type: 3}
 --- !u!1 &1844277265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3625,6 +3519,10 @@ PrefabInstance:
     - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Name
       value: textbox1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950204571843035523, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7657292655134026269, guid: 1d58ca236ec241042a098882cd260dca, type: 3}
       propertyPath: m_Pivot.x
@@ -3890,6 +3788,4 @@ SceneRoots:
   - {fileID: 905643029}
   - {fileID: 902538471}
   - {fileID: 77705453}
-  - {fileID: 1821617964}
   - {fileID: 8713008870548136265}
-  - {fileID: 779496248}

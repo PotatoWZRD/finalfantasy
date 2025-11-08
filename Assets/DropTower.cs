@@ -155,7 +155,7 @@ public class DropTower : MonoBehaviour
                 break;
             case TypeOfTower.Calculator:
                 GameObject newCalculator = Instantiate(calculator, mouseWorldPos, mouseCursor.transform.rotation);
-                newCalculator.GetComponent<ProtracScript>().hasDropped = true;
+                newCalculator.GetComponent<CalcScript>().hasDropped = true;
                 newCalculator.layer = LayerMask.NameToLayer("Tower");
                 break;
         }
