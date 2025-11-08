@@ -12,14 +12,6 @@ public class MathProblem : MonoBehaviour
     public bool run = false;
     public int curAns = 0;
 
-    //math
-    public int num1Min = 0;
-    public int num1Max = 10;
-    public int num2Min = 0;
-    public int num2Max = 10;
-    public bool addition, subtraction, multiplication;
-
-
     [SerializeField] GameObject coins;
     [SerializeField] GameObject bar;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,7 +30,6 @@ public class MathProblem : MonoBehaviour
             question.text = "";
             answer.text = "";
             curAns = MakeProblem();
-            answer.ActivateInputField();
             test = false;
         }
 
@@ -64,96 +55,11 @@ public class MathProblem : MonoBehaviour
 
     int MakeProblem()
     {
-        int num1 = Random.Range(num1Min, num1Max);
-        int num2 = Random.Range(num2Min, num2Max);
-        int ans = 0;
-        int operation = 0;
+        int num1 = Random.Range(1, 5);
+        int num2 = Random.Range(1, 5);
+        int ans = num1 + num2;
 
-
-        if (addition && subtraction && multiplication)
-        {
-            operation = Random.Range(0, 3);
-
-            switch (operation)
-            {
-                case 0:
-                    question.text = num1 + " + " + num2 + " = ";
-                    ans = num1 + num2;
-                    break;
-                case 1:
-                    question.text = num1 + " - " + num2 + " = ";
-                    ans = num1 - num2;
-                    break;
-                case 2:
-                    question.text = num1 + " x " + num2 + " = ";
-                    ans = num1 * num2;
-                    break;
-            }
-        }
-        else if (addition && subtraction)
-        {
-            operation = Random.Range(0, 2);
-
-            switch (operation)
-            {
-                case 0:
-                    question.text = num1 + " + " + num2 + " = ";
-                    ans = num1 + num2;
-                    break;
-                case 1:
-                    question.text = num1 + " - " + num2 + " = ";
-                    ans = num1 - num2;
-                    break;
-            }
-        }
-        else if (addition && multiplication)
-        {
-            operation = Random.Range(0, 2);
-
-            switch (operation)
-            {
-                case 0:
-                    question.text = num1 + " + " + num2 + " = ";
-                    ans = num1 + num2;
-                    break;
-                case 1:
-                    question.text = num1 + " x " + num2 + " = ";
-                    ans = num1 * num2;
-                    break;
-            }
-        }
-        else if (multiplication && subtraction)
-        {
-            operation = Random.Range(0, 2);
-
-            switch (operation)
-            {
-                case 0:
-                    question.text = num1 + " x " + num2 + " = ";
-                    ans = num1 * num2;
-                    break;
-                case 1:
-                    question.text = num1 + " - " + num2 + " = ";
-                    ans = num1 - num2;
-                    break;
-            }
-        }
-        else if (subtraction)
-        {
-            question.text = num1 + " - " + num2 + " = ";
-            ans = num1 - num2;
-        }
-        else if (multiplication)
-        {
-            question.text = num1 + " x " + num2 + " = ";
-            ans = num1 * num2;
-        }
-        else
-        {
-            question.text = num1 + " + " + num2 + " = ";
-            ans = num1 + num2;
-        }
-
+        question.text = num1 + " + " + num2 + " = ";
         return ans;
     }
 
