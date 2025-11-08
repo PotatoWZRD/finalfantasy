@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using System.Collections;
 
 public class MathProblem : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class MathProblem : MonoBehaviour
     {
         if (test)
         {
+            question.text = "";
+            answer.text = "";
             curAns = MakeProblem();
             test = false;
         }
@@ -32,12 +35,15 @@ public class MathProblem : MonoBehaviour
             {
                 question.color = Color.green;
                 Debug.Log("answer!");
+                StartCoroutine(WaitMath());
             }
             else
             {
                 question.color= Color.red;
                 Debug.Log("KILL YOURSELF!");
+                StartCoroutine(WaitMath());
             }
+            run = false;
         }
     }
 
@@ -49,5 +55,17 @@ public class MathProblem : MonoBehaviour
 
         question.text = num1 + " + " + num2 + " = ";
         return ans;
+    }
+
+    public void onEnterInput()
+    {
+        run = true;
+    }
+
+    IEnumerator WaitMath()
+    {
+        yield return new WaitForSeconds(2);
+        question.color = Color.black;
+        question.transform.parent.gameObject.SetActive(false);
     }
 }
