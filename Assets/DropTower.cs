@@ -37,7 +37,8 @@ public class DropTower : MonoBehaviour
         mouseCursor.transform.position = mouseWorldPosition;
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(pencil, mouseWorldPosition, mouseCursor.transform.rotation);
+            GameObject newPencil = Instantiate(pencil, mouseWorldPosition, mouseCursor.transform.rotation);
+            newPencil.GetComponent<PencilScript>().hasDropped = true;
         }
         if (Input.GetMouseButtonDown(1)) 
         {

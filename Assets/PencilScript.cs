@@ -1,16 +1,15 @@
 using UnityEngine;
-
-
+using DG.Tweening;
+using System.Collections;
 
 public class PencilScript : MonoBehaviour
 {
 
-    public GameObject pencil;
     public TypeOfTower towerType;
-
+    public float timeToTick;
     
-    public float test;
-
+    public float time;
+    public bool hasDropped;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,14 +19,31 @@ public class PencilScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        time += Time.deltaTime;
+
+        if (time >= timeToTick && hasDropped) 
+        {
+            time = 0;
+            //StartCoroutine(PencilAttack());
+        }
+
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            Debug.Log("AA");
+            transform.position += transform.up  * timeToTick;
+
+        }
+
+
     }
 
-    //Time goes down. When it reaches zero, attack.
-    /*
-     
-     
-     */
+    /*IEnumerator PencilAttack()
+    {
+        Vector2 position = transform.position;
+        transform.DOMove(transform.up * 2, 1f);
+        yield return new WaitForSeconds(2f);
+        transform.DOMove(-transform.up * 2, 1f);
+    }*/
 
 
 }
