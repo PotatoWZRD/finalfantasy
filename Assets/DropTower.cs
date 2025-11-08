@@ -50,8 +50,6 @@ public class DropTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChangeTypeOfTower();
-
         mousePos = Input.mousePosition;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePos);
         mouseWorldPosition.z = 0f;
@@ -109,32 +107,34 @@ public class DropTower : MonoBehaviour
         }
     }
 
-    public void ChangeTypeOfTower()
+    public void PENCIL()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
             towerType = TypeOfTower.Pencil;
             Destroy(mouseCursor);
             mouseCursor = Instantiate(gPencil);
             mouseCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
 
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
+
+
+    }
+    public void RULER()
+    {
             towerType = TypeOfTower.Protractor;
             Destroy(mouseCursor);
             mouseCursor = Instantiate(gProt);
             mouseCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
 
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
+        
+
+    }
+    public void CALC()
+    {
+     
             towerType = TypeOfTower.Calculator;
             Destroy(mouseCursor);
             mouseCursor = Instantiate(gCalc);
             mouseCursor.layer = LayerMask.NameToLayer("Ignore Raycast");
 
-        }
 
 
     }
