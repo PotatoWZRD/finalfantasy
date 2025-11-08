@@ -2910,10 +2910,12 @@ MonoBehaviour:
   towerType: 0
   alpha: {r: 1, g: 1, b: 1, a: 0.18431373}
   test: 0
+  PencilCost: 2
   boxCollider: {fileID: 1951213919}
   layerToHit:
     serializedVersion: 2
     m_Bits: 320
+  coinManager: {fileID: 0}
 --- !u!1 &1433993731
 GameObject:
   m_ObjectHideFlags: 0
