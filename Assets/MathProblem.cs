@@ -11,16 +11,19 @@ public class MathProblem : MonoBehaviour
     public bool test = false;
     public bool run = false;
     public int curAns = 0;
+
+    [SerializeField] GameObject coins;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         curAns = MakeProblem();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        //makes problem
         if (test)
         {
             question.text = "";
@@ -29,6 +32,7 @@ public class MathProblem : MonoBehaviour
             test = false;
         }
 
+        //checks answer
         if (run)
         {
             if (int.TryParse(answer.text, out int result) && curAns == result)
@@ -36,6 +40,7 @@ public class MathProblem : MonoBehaviour
                 question.color = Color.green;
                 Debug.Log("answer!");
                 StartCoroutine(WaitMath());
+                coins.GetComponent<CoinManager>().coins++;
             }
             else
             {
