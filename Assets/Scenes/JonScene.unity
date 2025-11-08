@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 69309608}
   - component: {fileID: 69309609}
   m_Layer: 0
-  m_Name: aab81eb6-3eb8-46c5-86ec-6c4224909564.sketchpad (2)_0
+  m_Name: NPC2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1851,7 +1851,7 @@ GameObject:
   - component: {fileID: 1281167577}
   - component: {fileID: 1281167578}
   m_Layer: 0
-  m_Name: aab81eb6-3eb8-46c5-86ec-6c4224909564.sketchpad (1)_0
+  m_Name: NPC1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2265,7 +2265,7 @@ GameObject:
   - component: {fileID: 1406427232}
   - component: {fileID: 1406427233}
   m_Layer: 0
-  m_Name: aab81eb6-3eb8-46c5-86ec-6c4224909564.sketchpad (3)_0
+  m_Name: NPC3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2947,7 +2947,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &2006914349
 Canvas:
   m_ObjectHideFlags: 0
