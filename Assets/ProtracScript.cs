@@ -11,6 +11,7 @@ public class ProtracScript : MonoBehaviour
     public bool hasDropped;
     public float offset;
     public float localTime;
+    public float damage;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,7 +45,7 @@ public class ProtracScript : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             Debug.Log("ASD");
-            collision.GetComponent<EnemyGeneral>().GetHit();
+            collision.GetComponent<EnemyGeneral>().GetHit(damage);
         }
     }
 }
