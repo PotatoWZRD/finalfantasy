@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         studentManager = GameObject.Find("StudentManager").GetComponent<StudentManager>();
-        StartCoroutine(DifficultyScaling());
+        //StartCoroutine(DifficultyScaling());
     }
 
     // Update is called once per frame
@@ -168,7 +168,7 @@ public class EnemySpawner : MonoBehaviour
         
         yield return new WaitForSeconds(10f);
         studentManager.difficultyVal = 2;
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(20f);
         studentManager.difficultyVal = 3;
         yield return new WaitForSeconds(20f);
         studentManager.difficultyVal = 4;
@@ -182,8 +182,10 @@ public class EnemySpawner : MonoBehaviour
         studentManager.difficultyVal = 8;
         yield return new WaitForSeconds(20f);
         studentManager.difficultyVal = 9;
+        yield return new WaitForSeconds(30f);
 
-
+        //WIN?
+        //2:30?
 
     }
 

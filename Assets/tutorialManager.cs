@@ -126,10 +126,18 @@ public class tutorialManager : MonoBehaviour
             cameraControl.GetComponent<CameraScroll>().minZoom = 5;
             cameraControl.GetComponent<CameraScroll>().maxZoom = 15;
             enemyControl.SetActive(true);
-            StartCoroutine(enemyControl.GetComponent<EnemySpawner>().DifficultyScaling());
+            //StartCoroutine(enemyControl.GetComponent<EnemySpawner>().DifficultyScaling());
             menu.SetActive(true);
             student.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
             Destroy(killMyself);
+
+            if(!fuckYou)
+            {
+                StartCoroutine(enemyControl.GetComponent<EnemySpawner>().DifficultyScaling());
+                fuckYou= true;
+            }
         }
     }
+
+    bool fuckYou;
 }
