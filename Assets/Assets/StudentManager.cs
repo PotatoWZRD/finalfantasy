@@ -17,9 +17,18 @@ public class StudentManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < difficultyVal; i++)
+        if(difficultyVal <= 7)
         {
-            students[i].SetActive(true);
+            for (int i = 0; i < difficultyVal; i++)
+            {
+                if (students[i] != null)
+                {
+                    students[i].SetActive(true);
+                }
+
+
+            }
         }
+
     }
 }
