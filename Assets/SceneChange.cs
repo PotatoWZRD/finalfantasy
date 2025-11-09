@@ -17,10 +17,10 @@ public class SceneChange : MonoBehaviour
 
     public void Losetomain()
     {
-        SceneManager.LoadScene("FinalScene 1");
+        SceneManager.LoadScene("FinalSprint");
     }
     public void wintomain()
     {
-        SceneManager.LoadScene("FinalScene 1");
+        SceneManager.LoadScene("FinalSprint");
     }
 }
