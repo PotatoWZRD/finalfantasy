@@ -108,8 +108,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   waypoints: []
+  startingLoc: []
   waypointIndex: 0
   moveSpeed: 1.5
+  startingPos: 0
 --- !u!114 &8109127980761822041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,8 +127,12 @@ MonoBehaviour:
   currHealth: 0
   maxHealth: 5
   enemy1: {fileID: 2881402786708966425, guid: c0b5b8586251b5f4cbb8025938a52d1d, type: 3}
+  enemy2: {fileID: 2881402786708966425}
+  enemy3: {fileID: 2881402786708966425, guid: e72e187db43e95347b87c39ffc8583cc, type: 3}
   healthSlider: {fileID: 3411143728639684353}
   isEnemy2: 1
+  isEnemy3: 0
+  isEnemy4: 0
 --- !u!50 &7749091521108640412
 Rigidbody2D:
   serializedVersion: 5

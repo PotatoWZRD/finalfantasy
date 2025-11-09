@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     public float time;
     public GameObject enemy;
     public GameObject enemy2;
+    public GameObject enemy3;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -77,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Three;
             GameObject newEn3 = Instantiate(enemy, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Four;
-            GameObject newEn4 = Instantiate(enemy2, this.transform);
+            GameObject newEn4 = Instantiate(enemy3, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Five;
             time = 0;
 
@@ -87,24 +88,24 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(enemy2, this.transform);
             GameObject newEn = Instantiate(enemy2, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Two;
-            GameObject newEn2 = Instantiate(enemy2, this.transform);
+            GameObject newEn2 = Instantiate(enemy3, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Three;
-            GameObject newEn3 = Instantiate(enemy2, this.transform);
+            GameObject newEn3 = Instantiate(enemy3, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Four;
             time = 0;
 
         }
         else if (time >= timeTillNextSpawn && studentManager.difficultyVal == 7)
         {
-            Instantiate(enemy2, this.transform);
-            GameObject newEn = Instantiate(enemy2, this.transform);
+            Instantiate(enemy3, this.transform);
+            GameObject newEn = Instantiate(enemy3, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Two;
-            GameObject newEn2 = Instantiate(enemy2, this.transform);
+            GameObject newEn2 = Instantiate(enemy3, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Three;
-            GameObject newEn3 = Instantiate(enemy2, this.transform);
+            GameObject newEn3 = Instantiate(enemy3, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Four;
             time = 0;
-            GameObject newEn4 = Instantiate(enemy2, this.transform);
+            GameObject newEn4 = Instantiate(enemy3, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Five;
             time = 0;
 

@@ -18,7 +18,7 @@ public class MathProblem : MonoBehaviour
     public int num2Min = 0;
     public int num2Max = 10;
     public bool addition, subtraction, multiplication;
-
+    audioManager audio;
 
     [SerializeField] GameObject coins;
     [SerializeField] GameObject bar;
@@ -26,6 +26,7 @@ public class MathProblem : MonoBehaviour
     void Start()
     {
         curAns = MakeProblem();
+        audio = GameObject.Find("AudioManager").GetComponent<audioManager>();
     }
 
     // Update is called once per frame
@@ -48,14 +49,14 @@ public class MathProblem : MonoBehaviour
             if (int.TryParse(answer.text, out int result) && curAns == result)
             {
                 question.color = Color.green;
-                Debug.Log("answer!");
                 StartCoroutine(WaitMath());
+                audio.PlaySfx(audio.problemRight);
                 coins.GetComponent<CoinManager>().coins++;
             }
             else
             {
+                audio.PlaySfx(audio.problemWrong);
                 question.color = Color.red;
-                Debug.Log("KILL YOURSELF!");
                 StartCoroutine(WaitMath());
             }
             run = false;

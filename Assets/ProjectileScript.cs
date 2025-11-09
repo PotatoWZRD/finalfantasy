@@ -1,3 +1,4 @@
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
@@ -5,6 +6,8 @@ public class ProjectileScript : MonoBehaviour
     GameObject target;
     public float moveSpeed;
     public float damage;
+    public float timeTillDeath;
+    float time;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +22,13 @@ public class ProjectileScript : MonoBehaviour
             Debug.Log(target);
             transform.position = Vector2.MoveTowards(gameObject.transform.position, target.transform.position, moveSpeed * Time.deltaTime);
         }
+
+        time += Time.deltaTime;
+        if(time >= timeTillDeath)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     public void Target(GameObject enemy)

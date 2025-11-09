@@ -31,6 +31,10 @@ public class DropTower : MonoBehaviour
     private bool canPlace;
     public LayerMask layerToHit;
     public CoinManager coinManager;
+
+    public float placementRadius = 0.5f; // Adjust as needed based on tower size
+    public LayerMask towerLayer;         // Assign this in Inspector to your "Tower" layer
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -60,10 +64,12 @@ public class DropTower : MonoBehaviour
 
         Collider2D hitGrass = Physics2D.OverlapPoint(mouseWorldPosition, LayerMask.GetMask("Grass"));
         Collider2D hitClass = Physics2D.OverlapPoint(mouseWorldPosition, LayerMask.GetMask("Class"));
+        Collider2D hitTower = Physics2D.OverlapCircle(mouseWorldPosition, 0.4f, LayerMask.GetMask("Tower"));
 
         mouseCursor.transform.position = mouseWorldPosition;
 
-        if (hitGrass != null && hitClass == null)
+        Physics2D.SyncTransforms();
+        if (hitGrass != null && hitClass == null && hitTower == null)
         {
             mouseCursor.SetActive(true);
             canPlace = true;
@@ -77,12 +83,14 @@ public class DropTower : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && canPlace && coinManager.coins >= PencilCost)
         {
-            coinManager.coins -= PencilCost;
+            Collider2D towerHit = Physics2D.OverlapCircle(mouseWorldPosition, placementRadius, towerLayer);
 
-            PlaceTower(mouseWorldPosition);
-
-
-
+            if (towerHit == null)
+            {
+                coinManager.coins -= PencilCost;
+                PlaceTower(mouseWorldPosition);
+            }
+            
         }
         if (Input.GetMouseButtonDown(1))
         {
