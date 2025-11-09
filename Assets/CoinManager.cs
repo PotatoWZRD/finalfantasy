@@ -14,6 +14,6 @@ public class CoinManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coinCount.text = "Coins: " + coins;
+        coinCount.text = "A+ points: " + coins;
     }
 }
