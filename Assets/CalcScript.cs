@@ -14,11 +14,11 @@ public class CalcScript : MonoBehaviour
     bool canAttack;
     public GameObject projectile;
 
-    CircleCollider2D circleCollider;
+    public CircleCollider2D circleCollider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        circleCollider = GetComponent<CircleCollider2D>();
+        circleCollider = GetComponentInChildren<CircleCollider2D>();
     }
 
     // Update is called once per frame

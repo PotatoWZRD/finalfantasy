@@ -64,7 +64,7 @@ public class DropTower : MonoBehaviour
 
         Collider2D hitGrass = Physics2D.OverlapPoint(mouseWorldPosition, LayerMask.GetMask("Grass"));
         Collider2D hitClass = Physics2D.OverlapPoint(mouseWorldPosition, LayerMask.GetMask("Class"));
-        Collider2D hitTower = Physics2D.OverlapCircle(mouseWorldPosition, .2f, LayerMask.GetMask("Tower"));
+        Collider2D hitTower = Physics2D.OverlapPoint(mouseWorldPosition,  LayerMask.GetMask("Tower"));
 
         mouseCursor.transform.position = mouseWorldPosition;
 
@@ -83,7 +83,7 @@ public class DropTower : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && canPlace && coinManager.coins >= PencilCost)
         {
-            Collider2D towerHit = Physics2D.OverlapCircle(mouseWorldPosition, placementRadius, towerLayer);
+               Collider2D towerHit = Physics2D.OverlapPoint(mouseWorldPosition,  LayerMask.GetMask("Tower"));
 
             if (towerHit == null)
             {
