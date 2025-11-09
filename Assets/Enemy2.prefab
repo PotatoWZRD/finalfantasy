@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currHealth: 0
-  maxHealth: 5
+  maxHealth: 8
   enemy1: {fileID: 2881402786708966425, guid: c0b5b8586251b5f4cbb8025938a52d1d, type: 3}
   enemy2: {fileID: 2881402786708966425}
   enemy3: {fileID: 2881402786708966425, guid: e72e187db43e95347b87c39ffc8583cc, type: 3}

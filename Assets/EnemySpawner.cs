@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class EnemySpawner : MonoBehaviour
@@ -22,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         studentManager = GameObject.Find("StudentManager").GetComponent<StudentManager>();
-        StartCoroutine(DifficultyScaling());
+        //StartCoroutine(DifficultyScaling());
     }
 
     // Update is called once per frame
@@ -133,10 +134,10 @@ public class EnemySpawner : MonoBehaviour
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Two;
             GameObject newEn2 = Instantiate(enemy4, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Three;
-            GameObject newEn3 = Instantiate(enemy3, this.transform);
+            GameObject newEn3 = Instantiate(enemy4, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Four;
             time = 0;
-            GameObject newEn4 = Instantiate(enemy3, this.transform);
+            GameObject newEn4 = Instantiate(enemy4, this.transform);
             newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Five;
             time = 0;
 
@@ -158,6 +159,9 @@ public class EnemySpawner : MonoBehaviour
                 break;
             case 5:
                 timeTillNextSpawn = 10;
+                break;
+            case 9:
+                timeTillNextSpawn = 4;
                 break;
         }
 
@@ -182,9 +186,12 @@ public class EnemySpawner : MonoBehaviour
         studentManager.difficultyVal = 8;
         yield return new WaitForSeconds(20f);
         studentManager.difficultyVal = 9;
+        yield return new WaitForSeconds(40f);
 
+        SceneManager.LoadScene("WinScene");
 
-
+        //WIN?
+        //2:30?
     }
 
 }

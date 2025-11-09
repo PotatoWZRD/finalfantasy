@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class HealthManager : MonoBehaviour
 
         if(CurrHealth <=0)
         {
-            //LOSE STATE;
+            SceneManager.LoadScene("LostScreen");
         }
     }
 

@@ -18,7 +18,7 @@ public class DoorTrigger : MonoBehaviour
             {
                 healthManager.OnHit(1f);
 
-                Destroy(collision.gameObject);
+                collision.gameObject.GetComponent<EnemyGeneral>().GetHit(100f);
 
             }
         }

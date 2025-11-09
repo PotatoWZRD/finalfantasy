@@ -120,16 +120,22 @@ public class tutorialManager : MonoBehaviour
         {
             tutor.text = "Scroll out of here and help us!";
         }
+
         else if (tTimer > 52)
         {
             tutor.text = "";
             cameraControl.GetComponent<CameraScroll>().minZoom = 5;
             cameraControl.GetComponent<CameraScroll>().maxZoom = 15;
             enemyControl.SetActive(true);
-            StartCoroutine(enemyControl.GetComponent<EnemySpawner>().DifficultyScaling());
+            if(!fuckyou)
+            {
+                StartCoroutine(enemyControl.GetComponent<EnemySpawner>().DifficultyScaling());
+                fuckyou = true;
+            }
             menu.SetActive(true);
             student.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
             Destroy(killMyself);
         }
     }
+    bool fuckyou;
 }
