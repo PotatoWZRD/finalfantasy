@@ -14,15 +14,20 @@ public class tutorialManager : MonoBehaviour
     int goal = 2;
     public float tTimer = 0;
     public bool answered = false;
+    public bool testing = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         cameraControl.GetComponent<CameraScroll>().minZoom = 2;
         cameraControl.GetComponent<CameraScroll>().maxZoom = 2;
         tTimer = 0;
+        if (testing)
+        {
+            tTimer = 50;
+        }
         tutorAnswer.enabled = false;
         student.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        enemyControl.GetComponent<EnemySpawner>().timeTillNextSpawn = 8000;
+        enemyControl.SetActive(false);
         menu.SetActive(false);
     }
 
@@ -111,13 +116,17 @@ public class tutorialManager : MonoBehaviour
         {
             tutor.text = "We need to pass this test!";
         }
-        else if (tTimer > 50)
+        else if (tTimer > 50 && tTimer <= 52 && !answered)
+        {
+            tutor.text = "Scroll out of here and help us!";
+        }
+        else if (tTimer > 52)
         {
             tutor.text = "";
             cameraControl.GetComponent<CameraScroll>().minZoom = 5;
             cameraControl.GetComponent<CameraScroll>().maxZoom = 15;
-            enemyControl.GetComponent<EnemySpawner>().timeTillNextSpawn = 8;
-            enemyControl.GetComponent<EnemySpawner>().time = 0;
+            enemyControl.SetActive(true);
+            StartCoroutine(enemyControl.GetComponent<EnemySpawner>().DifficultyScaling());
             menu.SetActive(true);
             student.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
             Destroy(killMyself);
