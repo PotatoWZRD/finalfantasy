@@ -8,7 +8,8 @@ public enum StartingPos
     Two, 
     Three,
     Four,
-    Five
+    Five,
+    Zero
 }
 
 
@@ -44,6 +45,8 @@ public class EnemyMove : MonoBehaviour
                 break;
             case StartingPos.Five:
                 transform.position = startingLoc[4].position;
+                break;
+            case StartingPos.Zero:
                 break;
         }
 

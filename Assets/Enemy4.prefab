@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7749091521108640412}
   - component: {fileID: 3231841355532392367}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 2881402786708966425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.68, y: -5.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -17.68, y: -5.128, z: 0}
+  m_LocalScale: {x: 1.8801893, y: 1.8801893, z: 1.8801893}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5922943374854939096}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 501633991515058499, guid: b60829a0a608d5747bbe243ff56523fa, type: 3}
+  m_Sprite: {fileID: 582473647807217564, guid: 05b421ca2aa672c41b619a828f92f308, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   waypoints: []
   startingLoc: []
   waypointIndex: 0
-  moveSpeed: 2
+  moveSpeed: 1.5
   startingPos: 0
 --- !u!114 &8109127980761822041
 MonoBehaviour:
@@ -125,14 +125,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currHealth: 0
-  maxHealth: 3
-  enemy1: {fileID: 2881402786708966425}
+  maxHealth: 20
+  enemy1: {fileID: 2881402786708966425, guid: c0b5b8586251b5f4cbb8025938a52d1d, type: 3}
   enemy2: {fileID: 2881402786708966425, guid: e7a6ac29ea630d944a36479c95f97fc3, type: 3}
   enemy3: {fileID: 2881402786708966425, guid: e72e187db43e95347b87c39ffc8583cc, type: 3}
   healthSlider: {fileID: 3411143728639684353}
   isEnemy2: 0
   isEnemy3: 0
-  isEnemy4: 0
+  isEnemy4: 1
 --- !u!50 &7749091521108640412
 Rigidbody2D:
   serializedVersion: 5

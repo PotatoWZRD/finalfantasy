@@ -8,6 +8,7 @@ TagManager:
   - Class
   - Tower
   - Grass
+  - Audio
   layers:
   - Default
   - TransparentFX
