@@ -7,6 +7,10 @@ public class tutorialManager : MonoBehaviour
     [SerializeField] TMP_Text tutor;
     [SerializeField] TMP_InputField tutorAnswer;
     [SerializeField] GameObject cameraControl;
+    [SerializeField] GameObject killMyself;
+    [SerializeField] GameObject enemyControl;
+    [SerializeField] GameObject student;
+    [SerializeField] GameObject menu;
     int goal = 2;
     public float tTimer = 0;
     public bool answered = false;
@@ -17,6 +21,9 @@ public class tutorialManager : MonoBehaviour
         cameraControl.GetComponent<CameraScroll>().maxZoom = 2;
         tTimer = 0;
         tutorAnswer.enabled = false;
+        student.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        enemyControl.GetComponent<EnemySpawner>().timeTillNextSpawn = 8000;
+        menu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -109,7 +116,11 @@ public class tutorialManager : MonoBehaviour
             tutor.text = "";
             cameraControl.GetComponent<CameraScroll>().minZoom = 5;
             cameraControl.GetComponent<CameraScroll>().maxZoom = 15;
-            Destroy(this.transform.parent);
+            enemyControl.GetComponent<EnemySpawner>().timeTillNextSpawn = 8;
+            enemyControl.GetComponent<EnemySpawner>().time = 0;
+            menu.SetActive(true);
+            student.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
+            Destroy(killMyself);
         }
     }
 }

@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     public GameObject enemy2;
     public GameObject enemy3;
+    public GameObject enemy4;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -110,6 +111,36 @@ public class EnemySpawner : MonoBehaviour
             time = 0;
 
         }
+        else if (time >= timeTillNextSpawn && studentManager.difficultyVal == 8)
+        {
+            Instantiate(enemy4, this.transform);
+            GameObject newEn = Instantiate(enemy3, this.transform);
+            newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Two;
+            GameObject newEn2 = Instantiate(enemy3, this.transform);
+            newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Three;
+            GameObject newEn3 = Instantiate(enemy3, this.transform);
+            newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Four;
+            time = 0;
+            GameObject newEn4 = Instantiate(enemy3, this.transform);
+            newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Five;
+            time = 0;
+
+        }
+        else if (time >= timeTillNextSpawn && studentManager.difficultyVal == 9)
+        {
+            Instantiate(enemy4, this.transform);
+            GameObject newEn = Instantiate(enemy4, this.transform);
+            newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Two;
+            GameObject newEn2 = Instantiate(enemy4, this.transform);
+            newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Three;
+            GameObject newEn3 = Instantiate(enemy3, this.transform);
+            newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Four;
+            time = 0;
+            GameObject newEn4 = Instantiate(enemy3, this.transform);
+            newEn.GetComponent<EnemyMove>().startingPos = StartingPos.Five;
+            time = 0;
+
+        }
 
         switch (studentManager.difficultyVal)
         {
@@ -123,16 +154,16 @@ public class EnemySpawner : MonoBehaviour
                 timeTillNextSpawn = 5;
                 break;
             case 4:
-                timeTillNextSpawn = 5;
+                timeTillNextSpawn = 8;
                 break;
             case 5:
-                timeTillNextSpawn = 5;
+                timeTillNextSpawn = 10;
                 break;
         }
 
     }
 
-    IEnumerator DifficultyScaling()
+    public IEnumerator DifficultyScaling()
     {
         
         yield return new WaitForSeconds(10f);
@@ -147,6 +178,10 @@ public class EnemySpawner : MonoBehaviour
         studentManager.difficultyVal = 6;
         yield return new WaitForSeconds(20f);
         studentManager.difficultyVal = 7;
+        yield return new WaitForSeconds(20f);
+        studentManager.difficultyVal = 8;
+        yield return new WaitForSeconds(20f);
+        studentManager.difficultyVal = 9;
 
 
 
